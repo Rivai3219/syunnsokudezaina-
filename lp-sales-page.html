@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロ品質ホームページ制作 - 35,000円</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #fef7f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.2);
+            border-radius: 0 0 1rem 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.8) 0%, rgba(14, 165, 233, 0.8) 100%), url('C:/Users/windows10/Pictures/瞬足デザイナー.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: 0 0 2rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero .price {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #facc15;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .limited-badge {
+            background: #facc15;
+            color: #374151;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .catchphrase {
+            font-size: 3.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+            animation: slideInFromTop 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .catchphrase-sub {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideInFromBottom 1.2s ease-out, blink 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes slideInFromTop {
+            0% { 
+                opacity: 0; 
+                transform: translateY(-50px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% { 
+                opacity: 0; 
+                transform: translateY(50px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.7; }
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #374151;
+        }
+
+        .features {
+            background: #fef7f0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .problem {
+            background: linear-gradient(135deg, #fef7f0 0%, #fef3e2 100%);
+        }
+
+        .problem-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .problem-list li {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .problem-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 20px;
+            font-size: 1.5rem;
+        }
+
+        .solution {
+            background: linear-gradient(135deg, #e0f2fe 0%, #fef7f0 100%);
+        }
+
+        .solution-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .solution-list li {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .solution-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 20px;
+            font-size: 1.5rem;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+            color: white;
+            text-align: center;
+            border-radius: 2rem 2rem 0 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #facc15;
+            color: #374151;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(250, 204, 21, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(250, 204, 21, 0.4);
+        }
+
+        .guarantee {
+            background: #f1f3f4;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .guarantee h3 {
+            color: #38bdf8;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .urgency {
+            background: #facc15;
+            color: #374151;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .notice {
+            background: #fef7f0;
+            padding: 60px 0;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .notice h2 {
+            color: #374151;
+            margin-bottom: 30px;
+        }
+
+        .notice-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .notice-content h3 {
+            color: #38bdf8;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .notice-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .notice-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .notice-content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0.5rem 0;
+            }
+            
+            .header-content h1 {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 60px 0 40px;
+                background-attachment: scroll;
+            }
+            
+            .catchphrase {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                line-height: 1.3;
+            }
+            
+            .catchphrase-sub {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            
+            .hero .price {
+                font-size: 2.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .limited-badge {
+                font-size: 1rem;
+                padding: 8px 20px;
+                margin-bottom: 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .problem-list li,
+            .solution-list li {
+                padding: 20px;
+                padding-left: 50px;
+                margin: 15px 0;
+                font-size: 0.95rem;
+            }
+            
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 18px 35px;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+            }
+            
+            .urgency {
+                font-size: 1rem;
+                padding: 15px 10px;
+            }
+            
+            .notice-content {
+                padding: 25px 20px;
+            }
+            
+            .notice-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .notice-content li {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 0 30px;
+            }
+            
+            .catchphrase {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .catchphrase-sub {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+            
+            .hero .subtitle {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero .price {
+                font-size: 2.2rem;
+                margin-bottom: 12px;
+            }
+            
+            .limited-badge {
+                font-size: 0.9rem;
+                padding: 6px 15px;
+            }
+            
+            .section {
+                padding: 30px 0;
+            }
+            
+            .section h2 {
+                font-size: 1.7rem;
+                margin-bottom: 25px;
+            }
+            
+            .feature-card {
+                padding: 20px 15px;
+            }
+            
+            .feature-icon {
+                font-size: 2rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .problem-list li,
+            .solution-list li {
+                padding: 15px;
+                padding-left: 40px;
+                margin: 12px 0;
+                font-size: 0.9rem;
+            }
+            
+            .problem-list li::before,
+            .solution-list li::before {
+                left: 15px;
+                font-size: 1.2rem;
+            }
+            
+            .cta-button {
+                font-size: 1.1rem;
+                padding: 16px 30px;
+            }
+            
+            .urgency {
+                font-size: 0.9rem;
+                padding: 12px 8px;
+            }
+            
+            .notice-content {
+                padding: 20px 15px;
+            }
+            
+            .notice-content h3 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .notice-content li {
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin-bottom: 6px;
+            }
+            
+            .container {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>瞬足デザイナー</h1>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="catchphrase">プロ品質のホームページを格安で</div>
+            <div class="catchphrase-sub">高品質・低価格・スピード対応</div>
+            <div class="limited-badge">🎯 格安価格でプロ品質 🎯</div>
+            <h1>ホームページ制作</h1>
+            <p class="subtitle">プロデザイナーが作る本格ホームページ</p>
+            <div class="price">¥35,000</div>
+            <p>※追加費用一切なし・完成まで責任対応</p>
+        </div>
+    </section>
+
+    <section class="urgency">
+        ⚡ 他社の半額以下！この価格でプロ品質のホームページが手に入ります ⚡
+    </section>
+
+    <section class="section problem">
+        <div class="container">
+            <h2>こんなお悩みありませんか？</h2>
+            <ul class="problem-list">
+                <li><strong>ホームページ制作費が高すぎる</strong><br>ホームページ制作に10万〜50万円かかり、個人事業には負担が大きい</li>
+                <li><strong>制作会社との連絡が面倒</strong><br>修正依頼のたびに時間がかかり、ビジネスチャンスを逃す</li>
+                <li><strong>品質にバラつきがある</strong><br>毎回違う制作者で、統一感のないデザインになってしまう</li>
+                <li><strong>作成に時間がかかりすぎる</strong><br>制作会社は1ヵ月以上かかることが多く、ビジネスチャンスを逃す</li>
+                <li><strong>品質が不安</strong><br>安いサービスはテンプレートだけで、オリジナル性がない</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section solution">
+        <div class="container">
+            <h2>すべて解決します！</h2>
+            <ul class="solution-list">
+                <li><strong>35,000円の格安価格</strong><br>他社の半額以下でプロ品質のホームページを提供</li>
+                <li><strong>プロデザイナーが直接制作</strong><br>経験豊富なプロがオリジナルデザインで作成</li>
+                <li><strong>一貫した高品質デザイン</strong><br>同じプロが制作するので、ブランドイメージが統一</li>
+                <li><strong>7日以内で完成</strong><br>急いでホームページが必要な方も安心</li>
+                <li><strong>修正は完成まで無料</strong><br>満足いくまで何度でも修正します</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section features">
+        <div class="container">
+            <h2>サービスの強み</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>スピード対応</h3>
+                    <p>7日以内で完成、急ぎの方も安心です</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>プロ品質のデザイン</h3>
+                    <p>確かな実力と経験に基づく高品質なホームページ制作</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>結果にコミット</h3>
+                    <p>集客と売上アップを意識した効果的なホームページ構成</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta">
+        <div class="container">
+            <h2>今すぐお申し込みください</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 30px;">プロ品質のホームページが35,000円で手に入ります。</p>
+            
+
+            <a href="mailto:kanayanataya@gmail.com?subject=ホームページ制作35,000円のお申し込み&body=お名前：%0D%0A会社名・事業内容：%0D%0A電話番号：%0D%0A希望内容・要望：%0D%0A参考サイト（あれば）：%0D%0A" class="cta-button">今すぐ申し込む</a>
+            
+            <p style="margin-top: 30px; font-size: 1.1rem;">
+                📧 お問い合わせ: kanayanataya@gmail.com
+            </p>
+        </div>
+    </section>
+
+    <section class="urgency">
+        🎆 今なら格安価格でプロ品質のホームページが手に入ります 🎆
+    </section>
+
+    <section class="section notice">
+        <div class="container">
+            <h2>ご利用に関する注意事項</h2>
+            <div class="notice-content">
+                <h3>📋 サービス提供条件</h3>
+                <ul>
+                    <li>本サービスはホームページを1サイト制作します</li>
+                    <li>お申し込み後のキャンセルは原則として承っておりません</li>
+                    <li>サービス開始は入金確認後となります</li>
+                    <li>制作期間は最短3日、最長7日で完成します</li>
+                    <li><strong>ページ数は5ページまで対応</strong>(トップ・サービス・会社概要・お問い合わせ等)</li>
+                    <li><strong>スマホ・タブレット対応のレスポンシブデザイン</strong></li>
+                </ul>
+
+                <h3>🎨 制作に関する注意事項</h3>
+                <ul>
+                    <li>画像・テキスト素材はお客様にご用意いただきます</li>
+                    <li>著作権に問題のある素材の使用はお断りいたします</li>
+                    <li>公序良俗に反する内容、法令に違反する可能性のある内容は制作できません</li>
+                    <li>競合他社の完全模倣や著作権侵害となる制作はお受けできません</li>
+                </ul>
+
+                <h3>💰 お支払いに関する注意事項</h3>
+                <ul>
+                    <li>お支払いは銀行振込またはクレジットカード決済となります</li>
+                    <li><strong>分割払いは対応しておりません（一括払いのみ）</strong></li>
+                    <li>領収書が必要な場合は事前にお申し出ください</li>
+                    <li><strong>返金には対応しておりません</strong></li>
+                    <li><strong>代金をお支払いいただいたご本人様のサイトのみ制作いたします</strong></li>
+                    <li><strong>上記に違反した場合、金輪際サービスをご利用いただけなくなります</strong></li>
+                </ul>
+
+                <h3>🔧 技術的な注意事項</h3>
+                <ul>
+                    <li>制作したホームページの著作権はお客様に帰属します</li>
+                    <li>サーバーへのアップロード作業は含まれておりません</li>
+                    <li>ドメイン取得・レンタルサーバー契約は別途必要です</li>
+                    <li>完成後の軽微な修正は無料ですが、大幅な変更は追加料金が発生する場合があります</li>
+                    <li><strong>修正依頼は一週間以内にご対応いたします</strong></li>
+                </ul>
+
+                <h3>📞 サポートに関する注意事項</h3>
+                <ul>
+                    <li>営業時間は平日9:00-18:00となります</li>
+                    <li>土日祝日は緊急時を除き対応いたしかねます</li>
+                    <li>制作期間中は専用のチャットツールでやり取りを行います</li>
+                    <li><strong>電話でのサポートは受け付けておりません</strong></li>
+                </ul>
+
+                <h3>⚖️ 免責事項</h3>
+                <ul>
+                    <li>制作したホームページの成果（売上・コンバージョン等）については保証いたしかねます</li>
+                    <li>お客様の事業内容や市場環境による影響は責任を負いかねます</li>
+                    <li>天災・システム障害等による納期遅延の場合、損害賠償責任は負いません</li>
+                    <li>第三者との紛争が生じた場合、当社は一切の責任を負いません</li>
+                </ul>
+
+                <p style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 5px; border-left: 4px solid #ffc107;">
+                    <strong>⚠️ 重要:</strong> 本サービスをお申し込みいただいた時点で、上記すべての注意事項にご同意いただいたものとみなします。ご不明な点がございましたら、お申し込み前に必ずお問い合わせください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // スクロール時のヘッダー効果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(56, 189, 248, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%)';
+            }
+        });
+    </script>
+</body>
+</html>
